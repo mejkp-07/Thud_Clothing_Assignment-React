@@ -1,3 +1,45 @@
+
+# How to Run this Project
+
+### This Project is made using React. This project mainly focuses on designing beautiful frontend and error handling.
+
+
+## Clone the Project
+```bash
+git clone https://github.com/mejkp-07/Thud_Clothing_Assignment-React.git
+```
+## Go inside this Project
+
+```bash
+cd Thud_Clothing_Assignment-React
+```
+
+
+ ## Install Packages
+
+```bash
+npm install
+```
+ 
+ ## Run the React
+
+```bash
+npm start
+```
+ ## View Project in Browser
+```bash
+http://localhost:3000
+```
+### Important Note
+
+If you have any problem in running fronend (npm start) then there must be conflict between the packages you have installed. To resove it you can run:-
+```bash
+npm audit fix
+```
+```bash
+npm audit fix --force
+```
+
 # Project Overview
 
 This project is a web-based e-commerce application that allows users to log in, view a personalized list of products, and log out. The products are displayed with sorting based on their purchase history, and the user’s information is fetched from a CSV file. The data is processed and displayed using Material UI for a clean and responsive design.
