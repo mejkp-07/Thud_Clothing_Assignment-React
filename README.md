@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# Project Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a web-based e-commerce application that allows users to log in, view a personalized list of products, and log out. The products are displayed with sorting based on their purchase history, and the user’s information is fetched from a CSV file. The data is processed and displayed using Material UI for a clean and responsive design.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Implementation Details
 
-### `npm start`
+### Approach:
+The application is built with React and Material UI. It implements a basic login functionality and displays a personalized product list. The user data and product information are fetched from CSV files using the `PapaParse` library, which is used for parsing CSV data into JavaScript objects.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Key aspects of the implementation include:
+- **Login Logic**: The user is authenticated by matching the username and password from the CSV file.
+- **Personalized Product List**: Products are displayed based on purchase history, showing both new products (from categories not purchased) and already purchased ones.
+- **CSV Data Handling**: The application loads data asynchronously from CSV files and stores it in state variables using React’s `useState` and `useEffect` hooks.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Product Display Logic:
+The logic to personalize the product list is as follows:
+1. **Load Data**: Products and purchase history are fetched using `PapaParse` from CSV files.
+2. **Purchase History**: Products are categorized based on user purchase history, where products in categories that the user has previously purchased are shown after the products in other categories.
+3. **Sort Products**: The products are first divided into two groups: products from purchased categories and products from non-purchased categories. Each group is then sorted alphabetically by product name.
+4. **Filtered Display**: The products are filtered based on a search query (case-insensitive), so users can find specific products by name.
 
-### `npm test`
+### Additional Features:
+- **Search Bar**: A search bar allows users to filter products by name in real-time.
+- **Logout Button**: Users can log out and return to the login screen. The login state is managed using React’s state management.
+- **Responsive Design**: The layout is designed to adapt to different screen sizes using Material UI’s Grid system and custom CSS.
+- **Material UI Styling**: The interface is styled using Material UI components like `AppBar`, `Button`, `TextField`, `Card`, and `Grid`.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Files Overview:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **loadCSV.js**: A utility file for loading and parsing CSV files using `PapaParse`.
+- **Login.js**: Contains the login form with username and password fields. It validates the credentials by comparing the input with data from the users CSV file.
+- **ProductCard.js**: A simple card component that displays product details including image, name, category, and price.
+- **ProductList.js**: Displays the product list with personalized sorting based on user purchase history. Includes a search bar and logout button.
+- **App.js**: The root component that manages user state and conditionally renders the login page or product list based on the login state.
+- **index.css**: Basic styling for the app with responsive adjustments for different screen sizes.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
