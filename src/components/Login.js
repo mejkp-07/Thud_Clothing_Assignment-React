@@ -39,7 +39,7 @@ const Login = ({ onLogin }) => {
                 }}
             >
                 <Typography variant="h4" mb={3} align="center">
-                    Welcome!
+                    Login!
                 </Typography>
                 <TextField
                     label="Username"
