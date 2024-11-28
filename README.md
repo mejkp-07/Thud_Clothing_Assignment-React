@@ -57,17 +57,39 @@ Key aspects of the implementation include:
 - **CSV Data Handling**: The application loads data asynchronously from CSV files and stores it in state variables using React’s `useState` and `useEffect` hooks.
 
 ### Product Display Logic:
-The logic to personalize the product list is as follows:
-1. **Load Data**: Products and purchase history are fetched using `PapaParse` from CSV files.
-2. **Purchase History**: Products are categorized based on user purchase history, where products in categories that the user has previously purchased are shown after the products in other categories.
-3. **Sort Products**: The products are first divided into two groups: products from purchased categories and products from non-purchased categories. Each group is then sorted alphabetically by product name.
-4. **Filtered Display**: The products are filtered based on a search query (case-insensitive), so users can find specific products by name.
+The logic to display personalized product recommendations is implemented as follows:
+1. **Data Loading**:
+   - User data, product data, and purchase history are fetched from respective CSV files.
+   - Data is parsed into structured JavaScript objects using `PapaParse`.
+   
+2. **Categorization**:
+   - **Purchased Categories**: Categories that the user has previously purchased from are identified using purchase history.
+   - **Unpurchased Categories**: Categories not present in the user's purchase history are identified.
+
+3. **Sorting**:
+   - **Non-Purchased Products**: Products from categories the user hasn't purchased from are displayed first.
+   - **Purchased Products**: Products from previously purchased categories are displayed afterward.
+   - Each group is sorted alphabetically by product name.
+
+4. **Filtering**:
+   - The product list is dynamically filtered based on a case-insensitive search query entered by the user.
+
+5. **Consistency**:
+   - The ordering logic ensures consistency across users, displaying non-purchased products first, followed by purchased ones.
 
 ### Additional Features:
 - **Search Bar**: A search bar allows users to filter products by name in real-time.
 - **Logout Button**: Users can log out and return to the login screen. The login state is managed using React’s state management.
 - **Responsive Design**: The layout is designed to adapt to different screen sizes using Material UI’s Grid system and custom CSS.
 - **Material UI Styling**: The interface is styled using Material UI components like `AppBar`, `Button`, `TextField`, `Card`, and `Grid`.
+- **Error Handling**:
+   - Invalid credentials trigger an error message for the user.
+   - CSV file loading errors (e.g., missing or malformed files) are logged with meaningful messages.
+- **User Experience Improvements**:
+   - Hover effects on product cards create an engaging interface.
+   - Smooth animations enhance the visual appeal.
+- **Reusability**:
+   - The `loadCSV` utility function is reusable, handling data fetching and parsing with ease.
 
 ---
 
