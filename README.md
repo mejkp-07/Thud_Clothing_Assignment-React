@@ -91,7 +91,7 @@ The logic to display personalized product recommendations is implemented as foll
 - **Reusability**:
    - The `loadCSV` utility function is reusable, handling data fetching and parsing with ease.
 
----
+
 
 ## Files Overview:
 
@@ -101,4 +101,9 @@ The logic to display personalized product recommendations is implemented as foll
 - **ProductList.js**: Displays the product list with personalized sorting based on user purchase history. Includes a search bar and logout button.
 - **App.js**: The root component that manages user state and conditionally renders the login page or product list based on the login state.
 - **index.css**: Basic styling for the app with responsive adjustments for different screen sizes.
+
+## Source Code
+```bash
+https://github.com/mejkp-07/Thud_Clothing_Assignment-React
+```
 
