@@ -43,6 +43,7 @@ const Login = ({ onLogin }) => {
                 </Typography>
                 <TextField
                     label="Username"
+                    autoComplete="off"
                     fullWidth
                     margin="normal"
                     value={username}
@@ -51,6 +52,7 @@ const Login = ({ onLogin }) => {
                 <TextField
                     label="Password"
                     type="password"
+                    autoComplete="off"
                     fullWidth
                     margin="normal"
                     value={password}
